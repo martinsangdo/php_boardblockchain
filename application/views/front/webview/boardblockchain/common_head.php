@@ -121,4 +121,6 @@
 <script type="text/javascript" src="/public/js/jquery.form.min.js"></script>
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/scripts.js"></script>
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/jquery.newsticker.min.js"></script>
+<script type="text/javascript" src="/public/js/common.js"></script>
+<script type="text/javascript" src="/public/js/constant.js"></script>
 <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/custom.js"></script>

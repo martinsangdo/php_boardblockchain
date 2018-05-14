@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/swiper.min.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/easy.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/style.css" type="text/css" media="all"/>
+
+<link rel="stylesheet" href="/public/unity_assets/css/unify-globals.css" type="text/css" media="all"/>
+
+<link rel="stylesheet" href="<?php echo PUBLIC_FOLDER; ?>css/custom.css" type="text/css" media="all"/>
+
 <style type='text/css'>
     body,
     h1 a,

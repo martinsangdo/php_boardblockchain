@@ -79,6 +79,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',              //changeable in new project
 	'username' => 'root',                   //changeable in new project
 	'password' => 'root',                   //changeable in new project
+
+//    'hostname' => '166.62.27.173',              //changeable in new project
+//    'username' => 'blockbod_user',                   //changeable in new project
+//    'password' => 'zpI_aIQ-CI+}',                   //changeable in new project
+
 	'database' => 'blockbod_db',        //changeable in new project
 
 	'dbdriver' => 'mysqli',

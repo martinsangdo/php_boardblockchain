@@ -62,6 +62,11 @@ p {font-size:14px;}
     width: 379px;
     height: 213px;
 }
+
+.d1-center-cropped {
+    width: 261px;
+    height: 180px;
+}
 .dt-news-post-meta span {font-size:12px;}
 .sidebar .social-widgets ul li a {text-align: left; padding-right:0;}
 .sidebar .social-widgets ul li a .screen-reader-text {margin-left:10px;}
@@ -79,6 +84,7 @@ p {font-size:14px;}
 .margin-t-0 {margin-top:0;}
 .margin-b-10 {margin-bottom:10px;}
 .margin-b-20 {margin-bottom:20px !important;}
+.g-height-80 {height: 80px;}
 .g-height-820 {height: 820px;}
 .g-height-357 {height:357px;}
 .g-height-427 {height:427px;}

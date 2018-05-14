@@ -19,87 +19,7 @@
 <body class="home">
 <div class="dt-body-wrap">
 
-    <div class="dt-top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-8 col-xs-7">
-                </div><!-- .col-lg-6 .col-md-6 .col-sm-8 .col-xs-7 -->
-
-                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-5">
-                    <div class="dt-top-social">
-                        <span class="dt-search-icon"><a><i class="fa fa-search transition35"></i></a></span>
-                    </div><!-- .dt-top-social -->
-                </div><!-- .col-lg-6 .col-md-6 .col-sm-4 .col-xs-5 -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div>
-
-    <div class="dt-search-bar transition35">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="dt-search-wrap">
-                        <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="#!">
-                                <label>
-                                    <span class="screen-reader-text">Search for:</span>
-                                    <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-                                </label>
-                                <input type="submit" class="search-submit" value="Search" />
-                            </form>
-                        </aside>
-                    </div><!-- .dt-search-wrap -->
-                </div><!-- .col-lg-12 .col-md-12 -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .dt-search-bar .transition35 -->
-
-    <header class="dt-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="dt-logo">
-
-                        <h1><a href="<?php echo base_url(); ?>" rel="home">Blockchain news</a></h1>
-
-                    </div><!-- .dt-logo -->
-                </div><!-- .col-lg-4 .col-md-4 -->
-
-                <div class="col-lg-8 col-md-8">
-                    <div class="dt-top-ads">
-
-                        <a href="#!" title="Header Advertisement" rel="dofollow" target="_blank"><img src="<?php echo PUBLIC_FOLDER; ?>img/wide-ads.png" alt="Header Advertisement"> </a>
-
-                    </div><!-- .dt-top-ads -->
-                </div><!-- .col-lg-8 col-md-8 -->
-
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </header><!-- .dt-header -->
-
-
-    <nav class="dt-menu-bar dt-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="dt-main-menu">
-                        <div class="menu-main-menu-container">
-                            <ul id="primary-menu" class="menu">
-                                <li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="#!">Cryptocurrency</a></li>
-                                <li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="#!">Investment</a></li>
-                                <li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="#!">Business</a></li>
-                                <li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="#!">Research</a></li>
-                                <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="#!">Data</a></li>
-                                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="#!">Download</a></li>
-                                <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="#!">Market</a></li>
-                                <li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-454"><a href="#!">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div><!-- .dt-main-menu -->
-                </div><!-- .col-lg-12 .col-md-12 -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-
-    </nav><!-- .dt-menu-bar -->
+    <?php require_once 'common_menu.php'; ?>
 
     <div class="container">
         <div class="row">
@@ -252,7 +172,7 @@
                     <div class="dt-news-list-3">
                         <div class="dt-news-layout-wrap dt-news-layout-half g-height-820">
 
-                            <h2 class="widget-title">Health<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Featured<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_4; ?>
@@ -293,7 +213,7 @@
                         </div><!-- .dt-news-layout-wrap .dt-news-layout-half -->
 
                         <div class="dt-news-layout-wrap dt-news-layout-half dt-half-last g-height-820">
-                            <h2 class="widget-title">Lifestyle<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Breaking<span><a href="#!">[ View All ]</a></span></h2>
                             <div class="dt-news-layout3">
 
                                 <div class="dt-news-post g-height-357">
@@ -339,7 +259,7 @@
                     <div class="dt-news-list-2">
                         <div class="dt-news-layout-wrap">
 
-                            <h2 class="widget-title">Science<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Research<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout2">
                                 <?php $data_block = $block_key_6; ?>
@@ -374,7 +294,7 @@
                     <div class="dt-news-list-4">
                         <div class="dt-news-layout-wrap dt-sidebar-news">
 
-                            <h2 class="widget-title">Politics<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Business<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout4">
                                 <?php $data_block = $block_key_7; ?>
@@ -400,12 +320,10 @@
                         </div><!-- .dt-news-layout-wrap .dt-sidebar-news -->
                     </div>
 
-
-
                     <div class="dt-news-list-1">
                         <div class="dt-news-layout-wrap">
 
-                            <h2 class="widget-title">Sports<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">World news<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout1">
                                 <?php $data_block = $block_key_8; ?>
@@ -472,7 +390,7 @@
 
                     <div class="dt-news-list-3">
                         <div class="dt-news-layout-wrap dt-news-layout-half">
-                            <h2 class="widget-title">Travel<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Weekly news<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_10; ?>
@@ -510,7 +428,7 @@
                         </div><!-- .dt-news-layout-wrap .dt-news-layout-half -->
 
                         <div class="dt-news-layout-wrap dt-news-layout-half dt-half-last">
-                            <h2 class="widget-title">Entertainment<span><a href="#!">[ View All ]</a></span></h2>
+                            <h2 class="widget-title">Market<span><a href="#!">[ View All ]</a></span></h2>
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_11; ?>
@@ -557,7 +475,7 @@
                     <div id="secondary" class="widget-area dt-sidebar" role="complementary">
                         <div class="dt-news-list-4">
                             <div class="dt-news-layout-wrap dt-sidebar-news">
-                                <h2 class="widget-title">Popular posts</h2>
+                                <h2 class="widget-title">Most viewed</h2>
 
                                 <div class="dt-news-layout4">
                                     <?php $data_block = $block_key_12; ?>
@@ -591,7 +509,7 @@
                         <div class="dt-news-list-2">
                             <div class="dt-news-layout-wrap">
 
-                                <h2 class="widget-title">Featured Posts<span><a href="#!">[ View All ]</a></span></h2>
+                                <h2 class="widget-title">Popular<span><a href="#!">[ View All ]</a></span></h2>
 
                                 <div class="dt-news-layout2">
                                     <?php $data_block = $block_key_13; ?>
@@ -646,21 +564,7 @@
         </div><!-- .row -->
     </div><!-- .container -->
 
-    <footer class="dt-footer">
-
-        <div class="dt-footer-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="dt-copyright">
-                            Copyright &copy; 2018 <a href="<?php echo base_url(); ?>">BoardBlockchain</a>. All rights reserved.						</div><!-- .dt-copyright -->
-                    </div><!-- .col-lg-6 .col-md-6 -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .dt-footer-bar -->
-    </footer><!-- .dt-footer -->
-
-    <a id="back-to-top" class="transition35"><i class="fa fa-angle-up"></i></a><!-- #back-to-top -->
+    <?php require_once 'common_footer.php'; ?>
 
 </div><!-- .dt-body-wrap -->
 

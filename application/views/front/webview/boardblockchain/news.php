@@ -1,318 +1,414 @@
 
 <!DOCTYPE html>
-<!-- saved from url=(0081)https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/ -->
-<html lang="en-US" style="transform: none;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://promenadethemes.com/demo/pt-magazine/xmlrpc.php">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
     <title><?php echo $article_detail->title; ?></title>
-    <meta name="robots" content="noindex,follow"/>
     <meta property="og:title" content="<?php echo $article_detail->title; ?>" />
     <meta property="og:description" content="<?php echo htmlspecialchars(preg_replace( "/\r|\n/", "", strip_tags($article_detail->excerpt))); ?>" />
     <meta property="og:url" content="<?php echo full_url($_SERVER); ?>" />
     <meta property="og:image" content="<?php echo $article_detail->thumb_url; ?>"  />
     <meta property="og:image:url" content="<?php echo $article_detail->thumb_url; ?>" />
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
-    <link rel="dns-prefetch" href="https://s.w.org/"/>
-    <link rel="stylesheet" id="pt-magazine-fonts-css" href="/public/blockbod/css/pt.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-meanmenu-css" href="/public/blockbod/css/meanmenu.css" type="text/css" media="all">
-    <link rel="stylesheet" id="font-awesome-css" href="/public/blockbod/css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" id="jquery-slick-css" href="/public/blockbod/css/slick.css" type="text/css" media="all">
-    <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="pt-magazine-style-css" href="/public/blockbod/css/custom.css" type="text/css" media="all">
+    <?php require_once 'common_head.php'; ?>
+    <script src="/public/js/article_detail.js"></script>
+</head>
 
-    <script type="text/javascript" src="/public/blockbod/js/jquery.js"></script>
-    <script type="text/javascript" src="/public/blockbod/js/jquery-migrate.min.js"></script>
-    <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style></head>
+<body class="post-template-default single single-post postid-377 single-format-standard">
+<div class="dt-body-wrap">
 
-<body class="post-template-default single single-post postid-2057 single-format-standard global-layout-right-sidebar blog-layout-grid global-sticky-sidebar" style="transform: none;">
+    <?php require_once 'common_menu.php'; ?>
 
-<div id="page" class="site" style="transform: none;">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="bottom-header">
-            <div class="container">
-                <div class="site-branding">
+    <div class="dt-default-single-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+                    <main id="main" class="site-main" role="main">
 
-                    <h1 class="site-title"><a href="https://promenadethemes.com/demo/pt-magazine/" rel="home">Blockchain news</a></h1>
+                        <article id="post-377" class="post-377 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-science">
+                            <header class="entry-header">
+                                <h1 class="entry-title"><?php echo $article_detail->title; ?></h1>
+                                <div class="entry-meta">
+                                    <span class="posted-on">Posted on <?php echo format_post_time($article_detail->time); ?></span></div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content" id="content_detail">
+                                <?php echo $article_detail->content; ?>
+                            </div><!-- .entry-content -->
+
+                            <footer class="entry-footer">
+                                <span class="cat-links">Source: <?php echo $site_detail->name; ?></span>
+                            </footer><!-- .entry-footer -->
+                            <?php if ($tag_list){ ?>
+                                <h6 class="g-color-gray-dark-v1">
+                                    <strong class="g-mr-5">Tags:</strong>
+                                    <?php
+                                    for ($i=0; $i<count($tag_list); $i++){
+                                        ?>
+                                        <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover
+                                        g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="/category/<?php echo $tag_list[$i]->slug; ?>/<?php echo $tag_list[$i]->_id; ?>"><?php echo $tag_list[$i]->name; ?></a>
+                                    <?php } //end for ?>
+                                </h6>
+                            <?php } //end if ?>
+
+                            <div class="dt-news-layout-wrap dt-related-posts">
+                                <h2>Related posts</h2>
+
+                                <ul>
+                                    <?php
+                                    for ($i=0; $i<count($related_posts); $i++){
+                                    ?>
+                                    <li class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="">
+                                                <img src="<?php echo $related_posts[$i]->thumb_url; ?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill d1-center-cropped" alt="" /></a>
+                                            <a href="<?php echo detail_uri($related_posts[$i]->slug); ?>" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure>
+
+                                        <h3 class="g-height-80"><a href="<?php echo detail_uri($related_posts[$i]->slug); ?>" rel="bookmark" title="<?php echo $related_posts[$i]->title; ?>"><?php echo $related_posts[$i]->title; ?></a></h3>
+                                    </li>
+                                    <?php } //end for ?>
+                                    <div class="clearfix"></div>
+                                </ul>
+                            </div>
 
 
-                    <p class="site-description">Latest articles</p>
-
-                </div>
-
-                <div class="header-advertisement">
-                    <a href="https://promenadethemes.com/downloads/pt-magazine/"><img width="728" height="90" src="/public/blockbod/img/728x90-pt-mag-adv-top-1.jpg" class="image wp-image-2227  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1.jpg 728w, https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/728x90-pt-mag-adv-top-1-300x37.jpg 300w" sizes="(max-width: 728px) 100vw, 728px"></a>
-                </div><!-- .header-advertisement -->
-            </div>
-        </div>
+                        </article><!-- #post-## -->
 
 
-        <div class="main-navigation-holder home-icon-enabled">
-            <div class="container">
-                <div id="main-nav" class="semi-width-nav clear-fix">
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                        <div id="comments" class="comments-area">
 
-                        <div class="home-icon active-true">
-                            <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a>
+                            <div id="respond" class="comment-respond">
+                                <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/easymag/2016/03/06/nasa-wants-to-build-a-quieter-supersonic-jet/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="#!" method="post" id="commentform" class="comment-form" novalidate>
+                                    <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+                                    <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+                                    <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+                                    <p class="form-submit"><input name="button" type="button" id="button" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='377' id='comment_post_ID' />
+                                        <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                    </p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6082a92171" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="46"/></p>			</form>
+                            </div><!-- #respond -->
+
+                        </div><!-- #comments -->
+
+                    </main><!-- #main -->
+                </div><!-- .col-lg-9 -->
+
+                <div class="col-lg-3 col-md-3">
+
+                    <div id="secondary" class="widget-area dt-sidebar" role="complementary">
+
+                        <div class="dt-news-list-4">
+                            <div class="dt-news-layout-wrap dt-sidebar-news">
+
+
+                                <h2 class="widget-title">Popular posts</h2>
+
+                                <div class="dt-news-layout4">
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/travel-startup-offers-half-price-hotel-deals-if-youre-willing-to-share-with-a-stranger/" title="Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/3821489872_e6a2159b55_b-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger" title="Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/travel-startup-offers-half-price-hotel-deals-if-youre-willing-to-share-with-a-stranger/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/travel-startup-offers-half-price-hotel-deals-if-youre-willing-to-share-with-a-stranger/" title="Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger">Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/5-family-friendly-places-to-visit-in-orlando-florida/" title="5 family-friendly places to visit in Orlando, Florida"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/orlando-visit-the-orlando-eye2-today-160104-01_cb860cac8283e6e1860165d7a52a4595.today-inline-large-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="5 family-friendly places to visit in Orlando, Florida" title="5 family-friendly places to visit in Orlando, Florida" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/5-family-friendly-places-to-visit-in-orlando-florida/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/5-family-friendly-places-to-visit-in-orlando-florida/" title="5 family-friendly places to visit in Orlando, Florida">5 family-friendly places to visit in Orlando, Florida</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/americans-pick-paris-as-the-worlds-most-romantic-city-in-expedia-travel-study/" title="Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/paris-romantic-couple-stock-today-160203-tease_ab0a3e12e016ba5ec0ca5cb868d202e8.today-inline-large-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study" title="Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/americans-pick-paris-as-the-worlds-most-romantic-city-in-expedia-travel-study/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/americans-pick-paris-as-the-worlds-most-romantic-city-in-expedia-travel-study/" title="Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study">Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/most-romantic-hotels-in-us-and-the-world-rated-by-tripadvisor/" title="Most romantic hotels in US and the world rated by TripAdvisor"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/bucuti-tara-beach-resort-aruba-today-160201-tease_bece592b46d054cd1353fc564bb305a7.today-inline-large-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="Most romantic hotels in US and the world rated by TripAdvisor" title="Most romantic hotels in US and the world rated by TripAdvisor" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/most-romantic-hotels-in-us-and-the-world-rated-by-tripadvisor/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/most-romantic-hotels-in-us-and-the-world-rated-by-tripadvisor/" title="Most romantic hotels in US and the world rated by TripAdvisor">Most romantic hotels in US and the world rated by TripAdvisor</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/10-best-beaches-in-the-us-and-world-according-to-tripadvisor/" title="10 best beaches in the US and world according to TripAdvisor"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/02_baia_do_sancho_fernando_de_noronha_brazil_03_0ac946ca0e32e41f1b54ab1b2ef8f142.today-inline-large-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="10 best beaches in the US and world according to TripAdvisor" title="10 best beaches in the US and world according to TripAdvisor" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/10-best-beaches-in-the-us-and-world-according-to-tripadvisor/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/10-best-beaches-in-the-us-and-world-according-to-tripadvisor/" title="10 best beaches in the US and world according to TripAdvisor">10 best beaches in the US and world according to TripAdvisor</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/top-10-longest-lasting-cars-and-vehicles-according-to-iseecars-com-study/" title="Top 10 longest-lasting cars and vehicles according to iSeeCars.com study"><img width="230" height="184" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/longest-lasting-cars-tease-2-160218_a658facb0246919e9b201bffd099c5fd.today-inline-large-230x184.jpg" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt="Top 10 longest-lasting cars and vehicles according to iSeeCars.com study" title="Top 10 longest-lasting cars and vehicles according to iSeeCars.com study" /></a>
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/top-10-longest-lasting-cars-and-vehicles-according-to-iseecars-com-study/" rel="bookmark"><span class="transition35"><i class="fa fa-search transition35"></i></span></a>
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="https://daisythemes.com/easymag/2016/03/06/top-10-longest-lasting-cars-and-vehicles-according-to-iseecars-com-study/" title="Top 10 longest-lasting cars and vehicles according to iSeeCars.com study">Top 10 longest-lasting cars and vehicles according to iSeeCars.com study</a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+
+
+                                    <div class="clearfix"></div>
+                                </div><!-- .dt-news-layout4 -->
+
+
+                            </div><!-- .dt-news-layout-wrap .dt-sidebar-news -->
                         </div>
 
-                        <div class="wrap-menu-content">
-                            <div class="menu-main-menu-container">
-                                <ul id="primary-menu" class="menu">
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO Schedule</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO offering</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">ICO manual</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Download</a></li>
-                                    <li id="menu-item-2139" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2139"><a href="#">Book store</a></li>
-                                </ul></div>
-                        </div><!-- .menu-content -->
-                    </nav><!-- #site-navigation -->
-                </div> <!-- #main-nav -->
 
-                <div class="search-holder">
-                    <div class="search-box">
-                        <form role="search" method="get" class="search-form" action="https://promenadethemes.com/demo/pt-magazine/">
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" placeholder="Search …" value="" name="s">
-                            <button type="submit" class="search-submit"><span class="screen-reader-text">Search</span><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div><!-- .search-holder -->
-
-            </div><!-- .container -->
-        </div>
-    </header>
-
-    <div id="breadcrumb">
-        <div class="container">
-            <div role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope="" itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3"><meta name="itemListOrder" content="Ascending"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="https://promenadethemes.com/demo/pt-magazine" rel="home"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item"><a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/"><span itemprop="name">Fashion</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-end"><span itemprop="name">Young girl shopping with happy mood</span><meta itemprop="position" content="3"></li></ul></div>	</div><!-- .container -->
-    </div><!-- #breadcrumb -->
-
-    <div id="content" class="site-content" style="transform: none;">
+                        <a href="https://daisythemes.com/wordpress-themes/" title="Sidebar Ads" rel="dofollow" target="_blank"><img style="margin-top: 20px" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/shoes-ads.png" alt="Sidebar Ads"> </a>
 
 
-        <div class="container" style="transform: none;"><div class="inner-wrapper" style="transform: none;">
-                <div id="primary" class="content-area" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-                    <!-- #main -->
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><main id="main" class="site-main" role="main">
+                        <div class="dt-news-list-2">
+                            <div class="dt-news-layout-wrap">
+
+                                <h2 class="widget-title">Featured Posts<span><a href="https://daisythemes.com/easymag/category/featured/">[ View All ]</a></span></h2>
+
+                                <div class="dt-news-layout2">
+
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
+
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/nasa-wants-to-build-a-quieter-supersonic-jet/" title="NASA Wants to Build a ‘Quieter’ Supersonic Jet"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/16-022-supersoniccontract-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="NASA Wants to Build a ‘Quieter’ Supersonic Jet" title="NASA Wants to Build a ‘Quieter’ Supersonic Jet" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Mar<br/>2016</span>
+                                                <span class="dt-news-post-day">06</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2016/03/06/nasa-wants-to-build-a-quieter-supersonic-jet/" title="NASA Wants to Build a ‘Quieter’ Supersonic Jet">
+                                                    NASA Wants to Build a ‘Quieter’ Supersonic Jet                                    </a>
+                                            </h3>
+
+                                            <div class="dt-news-post-desc">
+
+                                                Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet,...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                            <article id="post-2057" class="post-2057 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-fashion tag-girl tag-lifestyle">
-                                <div class="article-wrap-inner">
-                                    <div class="content-wrap">
-                                        <div class="content-wrap-inner">
-                                            <header class="entry-header">
-                                                <h2 class="entry-title"><?php echo $article_detail->title; ?></h2>
-                                                <div class="entry-meta">
-                                                    <span class="posted-on">
-                                                        <a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/" rel="bookmark">
-                                                            <time class="entry-date published" datetime="2017-01-11T08:59:41+00:00">January 11, 2017</time>
-                                                            <time class="updated" datetime="2017-11-16T08:15:08+00:00">November 16, 2017</time>
-                                                        </a>
-                                                    </span>
-                                                    <span class="byline">
-                                                        <span class="author vcard">
-                                                            <a class="url fn n" href="https://promenadethemes.com/demo/pt-magazine/author/prothemes/">Promenade Themes</a>
-                                                        </span>
-                                                    </span>
-                                                    <span class="cat-links">
-                                                        <a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/" rel="category tag">Fashion</a>
-                                                    </span>
-                                                    <span class="comments-link">
-                                                        <a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#respond">No Comment</a>
-                                                    </span>
-                                                </div><!-- .entry-meta -->
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
 
-                                            </header><!-- .entry-header -->
-                                            <div id="content_detail" class="entry-content">
-                                                <?php echo $article_detail->content; ?>
-                                            </div><!-- .entry-content -->
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/female-viagra-doesnt-work-very-well-study/" title="‘Female Viagra’ Doesn’t Work Very Well: Study"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/flibanserin-female-viagra-pill-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="‘Female Viagra’ Doesn’t Work Very Well: Study" title="‘Female Viagra’ Doesn’t Work Very Well: Study" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Mar<br/>2016</span>
+                                                <span class="dt-news-post-day">06</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
 
-                                        </div>
-                                    </div>
-                                </div>
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2016/03/06/female-viagra-doesnt-work-very-well-study/" title="‘Female Viagra’ Doesn’t Work Very Well: Study">
+                                                    ‘Female Viagra’ Doesn’t Work Very Well: Study                                    </a>
+                                            </h3>
 
-                            </article><!-- #post-## -->
+                                            <div class="dt-news-post-desc">
 
-                            <div class="news-col-3 related-posts">
+                                                Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                                <h3 class="related-posts-title">Related Posts</h3>
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
+
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/rich-people-are-buying-more-super-yachts/" title="Rich People Are Buying More Super-Yachts"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/pexels-photo-large-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="Rich People Are Buying More Super-Yachts" title="Rich People Are Buying More Super-Yachts" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Mar<br/>2016</span>
+                                                <span class="dt-news-post-day">06</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2016/03/06/rich-people-are-buying-more-super-yachts/" title="Rich People Are Buying More Super-Yachts">
+                                                    Rich People Are Buying More Super-Yachts                                    </a>
+                                            </h3>
+
+                                            <div class="dt-news-post-desc">
+
+                                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                                <div class="inner-wrapper">
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
+
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/trump-agrees-with-democrats-on-high-speed-trains/" title="Trump Agrees With Democrats on High-Speed Trains"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/trains-high-speed-donald-trump-election-2016-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="Trump Agrees With Democrats on High-Speed Trains" title="Trump Agrees With Democrats on High-Speed Trains" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Mar<br/>2016</span>
+                                                <span class="dt-news-post-day">06</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
+
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2016/03/06/trump-agrees-with-democrats-on-high-speed-trains/" title="Trump Agrees With Democrats on High-Speed Trains">
+                                                    Trump Agrees With Democrats on High-Speed Trains                                    </a>
+                                            </h3>
+
+                                            <div class="dt-news-post-desc">
+
+                                                In auctor lobortis lacus. Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Vestibulum ullamcorper mauris at ligula. Fusce fermentum. Nullam cursus lacinia...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                                    <div class="news-item three-column-item">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/"><img width="400" height="245" src="./detail_files/clothing-store-984396_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
 
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/">Luxury designs from famous companies</a></h2>
-                                            <span class="posted-date">February 21, 2017</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
+                                            <a href="https://daisythemes.com/easymag/2016/03/06/louis-c-k-on-donald-trump-the-guy-is-hitler/" title="Louis C.K. on Donald Trump: The Guy Is Hitler"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/louis-ck-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="Louis C.K. on Donald Trump: The Guy Is Hitler" title="Louis C.K. on Donald Trump: The Guy Is Hitler" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Mar<br/>2016</span>
+                                                <span class="dt-news-post-day">06</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
 
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2016/03/06/louis-c-k-on-donald-trump-the-guy-is-hitler/" title="Louis C.K. on Donald Trump: The Guy Is Hitler">
+                                                    Louis C.K. on Donald Trump: The Guy Is Hitler                                    </a>
+                                            </h3>
 
+                                            <div class="dt-news-post-desc">
 
-                                    <div class="news-item three-column-item">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/fashionable-and-durable-sunglasses-for-men/"><img width="400" height="245" src="./detail_files/sensolatino-2348551_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
-
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/fashionable-and-durable-sunglasses-for-men/">Fashionable and durable sunglasses for men</a></h2>
-                                            <span class="posted-date">October 16, 2016</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
-
+                                                Pellentesque dapibus hendrerit tortor. Praesent egestas tristique nibh. Sed a libero. Cras varius. Donec vitae orci sed dolor rutrum auctor. Fusce egestas elit eget...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                                    <div class="news-item three-column-item">
-                                        <div class="news-thumb">
-                                            <a href="https://promenadethemes.com/demo/pt-magazine/style-of-wine-glasses-served-in-restaurant/"><img width="400" height="245" src="./detail_files/restaurant-449952_1280-400x245.jpg" class="attachment-pt-magazine-tall size-pt-magazine-tall wp-post-image" alt=""></a>
-                                        </div><!-- .news-thumb -->
+                                    <div class="dt-news-post transition5">
+                                        <figure class="dt-news-post-img">
 
-                                        <div class="news-text-wrap">
-                                            <h2><a href="https://promenadethemes.com/demo/pt-magazine/style-of-wine-glasses-served-in-restaurant/">Style of wine glasses served in restaurant</a></h2>
-                                            <span class="posted-date">September 17, 2016</span>
-                                        </div><!-- .news-text-wrap -->
-                                    </div><!-- .news-item -->
+                                            <a href="https://daisythemes.com/easymag/2015/12/27/justin-bieber-supports-rival-top-christmas-song/" title="Justin Bieber supports rival for top Christmas song"><img width="410" height="260" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2015/12/Justin-bieber-Justin-Bieber-Wallpaper-justin-bieber-tickets-justin-bieber-songs-38-410x260.jpg" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt="Justin Bieber supports rival for top Christmas song" title="Justin Bieber supports rival for top Christmas song" /></a>
+                                            <div class="dt-news-post-meta">
+                                                <span class="dt-news-post-month">Dec<br/>2015</span>
+                                                <span class="dt-news-post-day">27</span>
+                                            </div><!-- .dt-news-post-meta -->
+                                        </figure><!-- .dt-news-post-img -->
 
-                                </div>
+                                        <div class="dt-news-post-content">
+                                            <h3>
+                                                <a href="https://daisythemes.com/easymag/2015/12/27/justin-bieber-supports-rival-top-christmas-song/" title="Justin Bieber supports rival for top Christmas song">
+                                                    Justin Bieber supports rival for top Christmas song                                    </a>
+                                            </h3>
 
-                            </div>
+                                            <div class="dt-news-post-desc">
 
-                            <div class="author-info-wrap">
-
-                                <div class="author-thumb">
-                                    <img alt="" src="./detail_files/4603d91e573633e45cf61946d98efa0f" srcset="https://secure.gravatar.com/avatar/4603d91e573633e45cf61946d98efa0f?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100">	</div>
-
-                                <div class="author-content-wrap">
-                                    <header class="entry-header">
-                                        <h3 class="author-name">About Promenade Themes</h3>
-                                    </header><!-- .entry-header -->
-
-                                    <div class="entry-content">
-                                        <div class="author-desc">Promenade Themes is a young creative design agency focused on creating stylish, modern and beautiful WordPress themes.</div>
-                                        <a class="authors-more-posts" href="https://promenadethemes.com/demo/pt-magazine/author/prothemes/">
-                                            View all posts by Promenade Themes →			</a>
-                                    </div><!-- .entry-content -->
-                                </div>
-
-                            </div>
-                            <nav class="navigation post-navigation" role="navigation">
-                                <h2 class="screen-reader-text">Post navigation</h2>
-                                <div class="nav-links"><div class="nav-previous"><a href="https://promenadethemes.com/demo/pt-magazine/delicious-roll-and-baked-pizza/" rel="prev">Delicious roll and baked pizza</a></div><div class="nav-next"><a href="https://promenadethemes.com/demo/pt-magazine/luxury-designs-from-famous-companies/" rel="next">Luxury designs from famous companies</a></div></div>
-                            </nav>
-                            <div id="comments" class="comments-area">
-
-                                <div id="respond" class="comment-respond">
-                                    <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://promenadethemes.com/demo/pt-magazine/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
-                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
-                                        <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
-                                        <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
-                                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2057" id="comment_post_ID">
-                                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                        </p>			</form>
-                                </div><!-- #respond -->
-
-                            </div><!-- #comments -->
-
-                        </main></div></div><!-- #primary -->
+                                                Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna...
+                                            </div><!-- .dt-news-post-desc -->
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post transition5 -->
 
 
-                <div id="sidebar-primary" class="widget-area sidebar" role="complementary" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 2050px;">
-                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: absolute; transform: translateY(639px); width: 330px; top: 0px;"><aside id="categories-2" class="widget widget_categories"><div class="section-title"><h2 class="widget-title">Categories</h2></div>		<ul>
-                                <li class="cat-item cat-item-18"><a href="https://promenadethemes.com/demo/pt-magazine/category/business/">Business</a>
+                                </div><!-- .dt-news-layout2 -->
+                                <div class="clearfix"></div>
+                            </div><!-- .dt-news-layout-wrap -->
+
+                        </div>
+
+
+
+                        <a href="https://daisythemes.com/wordpress-themes/" title="Sidebar Ads" rel="dofollow" target="_blank"><img style="margin-top: 20px" src="https://daisythemes.com/easymag/wp-content/uploads/sites/4/2016/03/super-sasle-ads.png" alt="Sidebar Ads"> </a>
+
+                        <aside id="recent-posts-6" class="widget widget_recent_entries">		<h2 class="widget-title">Post in Numbers</h2>		<ul>
+                                <li>
+                                    <a href="https://daisythemes.com/easymag/2016/03/06/travel-startup-offers-half-price-hotel-deals-if-youre-willing-to-share-with-a-stranger/">Travel startup offers half-price hotel deals if you&#8217;re willing to share with a stranger</a>
                                 </li>
-                                <li class="cat-item cat-item-14"><a href="https://promenadethemes.com/demo/pt-magazine/category/fashion/">Fashion</a>
+                                <li>
+                                    <a href="https://daisythemes.com/easymag/2016/03/06/5-family-friendly-places-to-visit-in-orlando-florida/">5 family-friendly places to visit in Orlando, Florida</a>
                                 </li>
-                                <li class="cat-item cat-item-20"><a href="https://promenadethemes.com/demo/pt-magazine/category/flash/">Flash</a>
+                                <li>
+                                    <a href="https://daisythemes.com/easymag/2016/03/06/americans-pick-paris-as-the-worlds-most-romantic-city-in-expedia-travel-study/">Americans pick Paris as the world&#8217;s most romantic city in Expedia travel study</a>
                                 </li>
-                                <li class="cat-item cat-item-22"><a href="https://promenadethemes.com/demo/pt-magazine/category/health/">Health</a>
+                                <li>
+                                    <a href="https://daisythemes.com/easymag/2016/03/06/most-romantic-hotels-in-us-and-the-world-rated-by-tripadvisor/">Most romantic hotels in US and the world rated by TripAdvisor</a>
                                 </li>
-                                <li class="cat-item cat-item-25"><a href="https://promenadethemes.com/demo/pt-magazine/category/lifestyle/">Lifestyle</a>
-                                </li>
-                                <li class="cat-item cat-item-21"><a href="https://promenadethemes.com/demo/pt-magazine/category/sports/">Sports</a>
-                                </li>
-                                <li class="cat-item cat-item-24"><a href="https://promenadethemes.com/demo/pt-magazine/category/technology/">Technology</a>
+                                <li>
+                                    <a href="https://daisythemes.com/easymag/2016/03/06/10-best-beaches-in-the-us-and-world-according-to-tripadvisor/">10 best beaches in the US and world according to TripAdvisor</a>
                                 </li>
                             </ul>
-                        </aside><aside id="media_image-3" class="widget widget_media_image"><a href="https://promenadethemes.com/downloads/wordpress-business-themes/"><img width="336" height="280" src="./detail_files/336x280-pt-mag-adv.jpg" class="image wp-image-2195  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/336x280-pt-mag-adv.jpg 336w, https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/11/336x280-pt-mag-adv-300x250.jpg 300w" sizes="(max-width: 336px) 100vw, 336px"></a></aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><div class="section-title"><h2 class="widget-title">Tags</h2></div><div class="tagcloud"><a href="https://promenadethemes.com/demo/pt-magazine/tag/business/" class="tag-cloud-link tag-link-39 tag-link-position-1" style="font-size: 15.933333333333pt;" aria-label="business (10 items)">business</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/care/" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 9.8666666666667pt;" aria-label="care (5 items)">care</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/comfort/" class="tag-cloud-link tag-link-37 tag-link-position-3" style="font-size: 9.8666666666667pt;" aria-label="comfort (5 items)">comfort</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/fashion/" class="tag-cloud-link tag-link-28 tag-link-position-4" style="font-size: 19.2pt;" aria-label="fashion (14 items)">fashion</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/game/" class="tag-cloud-link tag-link-29 tag-link-position-5" style="font-size: 8pt;" aria-label="game (4 items)">game</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/girl/" class="tag-cloud-link tag-link-35 tag-link-position-6" style="font-size: 12.666666666667pt;" aria-label="girl (7 items)">girl</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/health/" class="tag-cloud-link tag-link-26 tag-link-position-7" style="font-size: 15pt;" aria-label="health (9 items)">health</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/invention/" class="tag-cloud-link tag-link-48 tag-link-position-8" style="font-size: 11.5pt;" aria-label="invention (6 items)">invention</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/life/" class="tag-cloud-link tag-link-46 tag-link-position-9" style="font-size: 11.5pt;" aria-label="life (6 items)">life</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/lifestyle/" class="tag-cloud-link tag-link-27 tag-link-position-10" style="font-size: 22pt;" aria-label="lifestyle (19 items)">lifestyle</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/men/" class="tag-cloud-link tag-link-38 tag-link-position-11" style="font-size: 13.833333333333pt;" aria-label="men (8 items)">men</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/mind/" class="tag-cloud-link tag-link-31 tag-link-position-12" style="font-size: 17.566666666667pt;" aria-label="mind (12 items)">mind</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/sports/" class="tag-cloud-link tag-link-11 tag-link-position-13" style="font-size: 9.8666666666667pt;" aria-label="sports (5 items)">sports</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/technology/" class="tag-cloud-link tag-link-47 tag-link-position-14" style="font-size: 11.5pt;" aria-label="technology (6 items)">technology</a></div>
-                        </aside><aside id="media_gallery-2" class="widget widget_media_gallery"><div class="section-title"><h2 class="widget-title">View Gallery</h2></div><div id="gallery-1" class="gallery galleryid-2057 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/01/pexels-photo-264637.jpeg"><img width="150" height="150" src="./detail_files/pexels-photo-264637-150x150.jpeg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/10/portrait-2731109_1280.jpg"><img width="150" height="150" src="./detail_files/portrait-2731109_1280-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2016/10/sensolatino-2348551_1280.jpg"><img width="150" height="150" src="./detail_files/sensolatino-2348551_1280-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2016/04/quarterback-67701_1280.jpg"><img width="150" height="150" src="./detail_files/quarterback-67701_1280-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="https://promenadethemes.com/demo/pt-magazine/wp-content/uploads/2017/10/fig-2079166_1280.jpg"><img width="150" height="150" src="./detail_files/fig-2079166_1280-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure><figure class="gallery-item">
-                                    <div class="gallery-icon landscape">
-                                        <a href="./detail_files/pexels-photo-318236.jpeg"><img width="150" height="150" src="./detail_files/pexels-photo-318236-150x150.jpeg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-                                    </div></figure>
-                            </div>
-                        </aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><div class="section-title"><h2 class="widget-title">Tags</h2></div><div class="tagcloud"><a href="https://promenadethemes.com/demo/pt-magazine/tag/business/" class="tag-cloud-link tag-link-39 tag-link-position-1" style="font-size: 15.933333333333pt;" aria-label="business (10 items)">business</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/care/" class="tag-cloud-link tag-link-45 tag-link-position-2" style="font-size: 9.8666666666667pt;" aria-label="care (5 items)">care</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/comfort/" class="tag-cloud-link tag-link-37 tag-link-position-3" style="font-size: 9.8666666666667pt;" aria-label="comfort (5 items)">comfort</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/fashion/" class="tag-cloud-link tag-link-28 tag-link-position-4" style="font-size: 19.2pt;" aria-label="fashion (14 items)">fashion</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/game/" class="tag-cloud-link tag-link-29 tag-link-position-5" style="font-size: 8pt;" aria-label="game (4 items)">game</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/girl/" class="tag-cloud-link tag-link-35 tag-link-position-6" style="font-size: 12.666666666667pt;" aria-label="girl (7 items)">girl</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/health/" class="tag-cloud-link tag-link-26 tag-link-position-7" style="font-size: 15pt;" aria-label="health (9 items)">health</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/invention/" class="tag-cloud-link tag-link-48 tag-link-position-8" style="font-size: 11.5pt;" aria-label="invention (6 items)">invention</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/life/" class="tag-cloud-link tag-link-46 tag-link-position-9" style="font-size: 11.5pt;" aria-label="life (6 items)">life</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/lifestyle/" class="tag-cloud-link tag-link-27 tag-link-position-10" style="font-size: 22pt;" aria-label="lifestyle (19 items)">lifestyle</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/men/" class="tag-cloud-link tag-link-38 tag-link-position-11" style="font-size: 13.833333333333pt;" aria-label="men (8 items)">men</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/mind/" class="tag-cloud-link tag-link-31 tag-link-position-12" style="font-size: 17.566666666667pt;" aria-label="mind (12 items)">mind</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/sports/" class="tag-cloud-link tag-link-11 tag-link-position-13" style="font-size: 9.8666666666667pt;" aria-label="sports (5 items)">sports</a>
-                                <a href="https://promenadethemes.com/demo/pt-magazine/tag/technology/" class="tag-cloud-link tag-link-47 tag-link-position-14" style="font-size: 11.5pt;" aria-label="technology (6 items)">technology</a></div>
-                        </aside></div></div><!-- #secondary -->
-            </div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content -->
+                        </aside><aside id="categories-3" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+                                <li class="cat-item cat-item-11"><a href="https://daisythemes.com/easymag/category/business/" >Business</a>
+                                </li>
+                                <li class="cat-item cat-item-7"><a href="https://daisythemes.com/easymag/category/entertainment/" >Entertainment</a>
+                                </li>
+                                <li class="cat-item cat-item-15"><a href="https://daisythemes.com/easymag/category/featured/" >Featured</a>
+                                </li>
+                                <li class="cat-item cat-item-10"><a href="https://daisythemes.com/easymag/category/health/" >Health</a>
+                                </li>
+                                <li class="cat-item cat-item-6"><a href="https://daisythemes.com/easymag/category/lifestyle/" >Lifestyle</a>
+                                </li>
+                                <li class="cat-item cat-item-5"><a href="https://daisythemes.com/easymag/category/politics/" >Politics</a>
+                                </li>
+                                <li class="cat-item cat-item-17"><a href="https://daisythemes.com/easymag/category/science/" >Science</a>
+                                </li>
+                                <li class="cat-item cat-item-4"><a href="https://daisythemes.com/easymag/category/sports/" >Sports</a>
+                                </li>
+                                <li class="cat-item cat-item-3"><a href="https://daisythemes.com/easymag/category/technology/" >Technology</a>
+                                </li>
+                                <li class="cat-item cat-item-8"><a href="https://daisythemes.com/easymag/category/travel/" >Travel</a>
+                                </li>
+                                <li class="cat-item cat-item-1"><a href="https://daisythemes.com/easymag/category/uncategorized/" >Uncategorized</a>
+                                </li>
+                                <li class="cat-item cat-item-2"><a href="https://daisythemes.com/easymag/category/world/" >World</a>
+                                </li>
+                            </ul>
+                        </aside></div><!-- #secondary -->
 
-
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="site-info-holder">
-                <div class="copyright">Copyright © Blockbod. All rights reserved.</div><!-- .copyright -->
-            </div>
+                </div>
+            </div><!-- .row -->
         </div><!-- .container -->
-    </footer><!-- #colophon -->
-</div><!-- #page -->
+    </div><!-- .dt-default-single-page -->
 
-<a href="https://promenadethemes.com/demo/pt-magazine/young-girl-shopping-with-happy-mood/#page" class="scrollup" id="btn-scrollup" style="display: inline;"><i class="fa fa-angle-up"></i></a><script type="text/javascript" src="./detail_files/navigation.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/skip-link-focus-fix.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/jquery.meanmenu.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/theia-sticky-sidebar.min.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/custom.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/comment-reply.min.js"></script>
-<script type="text/javascript" src="/public/blockbod/js/wp-embed.min.js"></script>
+    <?php require_once 'common_footer.php'; ?>
 
+</div><!-- .dt-body-wrap -->
 
-</body></html>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/themes/easymag/js/jquery.newsticker.min.js?ver=4.9.5'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/themes/easymag/js/custom.js?ver=4.9.5'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-includes/js/comment-reply.min.js?ver=4.9.5'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-includes/js/wp-embed.min.js?ver=4.9.5'></script>
+<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4'></script>
+
+</body>
+</html>

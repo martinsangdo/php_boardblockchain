@@ -13,7 +13,7 @@
     <meta name="twitter:title" content="Latest news about blockchain and cryptocurrency" />
 
     <?php require_once 'common_head.php'; ?>
-
+    <script type="text/javascript" src="<?php echo PUBLIC_FOLDER; ?>js/home.js"></script>
 </head>
 
 <body class="home">
@@ -256,8 +256,23 @@
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_4; ?>
+
+                                <div class="dt-news-post g-height-357">
+                                    <figure class="dt-news-post-img">
+                                        <img src="<?php echo $data_block[0]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill home2-center-cropped" alt="" />
+                                    </figure><!-- .dt-news-post-img -->
+
+                                    <div class="dt-news-post-content">
+                                        <h5><a href="<?php echo detail_uri($data_block[0]->slug); ?>"><?php echo $data_block[0]->title; ?></a></h5>
+
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[0]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                    </div>
+                                    <!-- .dt-news-post-content -->
+                                    <div class="clearfix"></div>
+                                </div><!-- .dt-news-post -->
+
                                 <?php
-                                for ($i=0; $i<4; $i++) {
+                                for ($i=1; $i<4; $i++) {
                                 ?>
                                 <div class="dt-news-post">
                                     <figure class="dt-news-post-img">
@@ -266,8 +281,6 @@
 
                                     <div class="dt-news-post-content">
                                         <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h5>
-
-                                        <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
                                     </div>
                                     <!-- .dt-news-post-content -->
                                     <div class="clearfix"></div>
@@ -280,14 +293,25 @@
                         </div><!-- .dt-news-layout-wrap .dt-news-layout-half -->
 
                         <div class="dt-news-layout-wrap dt-news-layout-half dt-half-last g-height-820">
-
-
                             <h2 class="widget-title">Lifestyle<span><a href="#!">[ View All ]</a></span></h2>
-
-
                             <div class="dt-news-layout3">
+
+                                <div class="dt-news-post g-height-357">
+                                    <figure class="dt-news-post-img">
+                                        <img src="<?php echo $data_block[5]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill home2-center-cropped" alt="" />
+                                    </figure><!-- .dt-news-post-img -->
+
+                                    <div class="dt-news-post-content">
+                                        <h5><a href="<?php echo detail_uri($data_block[5]->slug); ?>"><?php echo $data_block[5]->title; ?></a></h5>
+
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[5]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                    </div>
+                                    <!-- .dt-news-post-content -->
+                                    <div class="clearfix"></div>
+                                </div><!-- .dt-news-post -->
+
                                 <?php
-                                for ($i=5; $i<9; $i++) {
+                                for ($i=6; $i<9; $i++) {
                                 ?>
                                 <div class="dt-news-post">
                                     <figure class="dt-news-post-img">
@@ -296,8 +320,6 @@
 
                                     <div class="dt-news-post-content">
                                         <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h5>
-
-                                        <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
                                     </div>
                                     <!-- .dt-news-post-content -->
                                     <div class="clearfix"></div>
@@ -396,9 +418,9 @@
                                     </figure><!-- .dt-news-post-img -->
 
                                     <div class="dt-news-post-content">
-                                        <h3><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h3>
+                                        <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h5>
 
-                                        <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
                                     </div><!-- .dt-news-post-content -->
 
                                     <div class="clearfix"></div>
@@ -427,15 +449,15 @@
                                 <div class="dt-news-post transition5">
                                     <figure class="dt-news-post-img">
                                         <a href="<?php echo detail_uri($data_block[$i]->slug); ?>">
-                                            <img src="<?php echo $data_block[$i]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image" alt=""/></a>
+                                            <img src="<?php echo $data_block[$i]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill home1-center-cropped" alt=""/></a>
                                     </figure><!-- .dt-news-post-img -->
 
                                     <div class="dt-news-post-content">
-                                        <h3>
+                                        <h5 class="g-height-60">
                                             <a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a>
-                                        </h3>
+                                        </h5>
 
-                                        <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
                                     </div><!-- .dt-news-post-content -->
                                 </div><!-- .dt-news-post transition5 -->
                                 <?php } //end for?>
@@ -454,8 +476,21 @@
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_10; ?>
+
+                                <div class="dt-news-post g-height-427">
+                                    <figure class="dt-news-post-img">
+                                        <img src="<?php echo $data_block[0]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill home2-center-cropped" alt="" />
+                                    </figure><!-- .dt-news-post-img -->
+                                    <div class="dt-news-post-content">
+                                        <h5><a href="<?php echo detail_uri($data_block[0]->slug); ?>" ><?php echo $data_block[0]->title; ?></a></h5>
+
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[0]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                    </div><!-- .dt-news-post-content -->
+                                    <div class="clearfix"></div>
+                                </div><!-- .dt-news-post -->
+
                                 <?php
-                                for ($i=0; $i<6; $i++) {
+                                for ($i=1; $i<5; $i++) {
                                 ?>
                                 <div class="dt-news-post">
                                     <figure class="dt-news-post-img">
@@ -463,9 +498,7 @@
                                     </figure><!-- .dt-news-post-img -->
 
                                     <div class="dt-news-post-content">
-                                        <h3><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" ><?php echo $data_block[$i]->title; ?></a></h3>
-
-                                        <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                        <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" ><?php echo $data_block[$i]->title; ?></a></h5>
                                     </div><!-- .dt-news-post-content -->
                                     <div class="clearfix"></div>
                                 </div><!-- .dt-news-post -->
@@ -477,15 +510,25 @@
                         </div><!-- .dt-news-layout-wrap .dt-news-layout-half -->
 
                         <div class="dt-news-layout-wrap dt-news-layout-half dt-half-last">
-
-
                             <h2 class="widget-title">Entertainment<span><a href="#!">[ View All ]</a></span></h2>
-
 
                             <div class="dt-news-layout3">
                                 <?php $data_block = $block_key_11; ?>
+
+                                <div class="dt-news-post g-height-427">
+                                    <figure class="dt-news-post-img">
+                                        <img src="<?php echo $data_block[0]->thumb_url;?>" class="attachment-dt-featured-post-medium size-dt-featured-post-medium wp-post-image center-cropped-fill home2-center-cropped" alt="" />
+                                    </figure><!-- .dt-news-post-img -->
+                                    <div class="dt-news-post-content">
+                                        <h5><a href="<?php echo detail_uri($data_block[0]->slug); ?>" ><?php echo $data_block[0]->title; ?></a></h5>
+
+                                        <div class="dt-news-post-desc ellipsis5lines"><?php echo $data_block[0]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                    </div><!-- .dt-news-post-content -->
+                                    <div class="clearfix"></div>
+                                </div><!-- .dt-news-post -->
+
                                 <?php
-                                for ($i=0; $i<6; $i++) {
+                                for ($i=1; $i<5; $i++) {
                                     ?>
                                     <div class="dt-news-post">
                                         <figure class="dt-news-post-img">
@@ -493,9 +536,7 @@
                                         </figure><!-- .dt-news-post-img -->
 
                                         <div class="dt-news-post-content">
-                                            <h3><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" ><?php echo $data_block[$i]->title; ?></a></h3>
-
-                                            <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                            <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>" ><?php echo $data_block[$i]->title; ?></a></h5>
                                         </div><!-- .dt-news-post-content -->
                                         <div class="clearfix"></div>
                                     </div><!-- .dt-news-post -->
@@ -530,7 +571,7 @@
                                         </figure><!-- .dt-news-post-img -->
 
                                         <div class="dt-news-post-content">
-                                            <h3><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h3>
+                                            <h5><a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a></h5>
                                         </div><!-- .dt-news-post-content -->
                                     </div><!-- .dt-news-post -->
                                     <?php } //end for?>
@@ -564,11 +605,11 @@
                                         </figure><!-- .dt-news-post-img -->
 
                                         <div class="dt-news-post-content">
-                                            <h3>
+                                            <h5>
                                                 <a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a>
-                                            </h3>
+                                            </h5>
 
-                                            <div class="dt-news-post-desc"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
+                                            <div class="dt-news-post-desc ellipsis4lines"><?php echo $data_block[$i]->excerpt; ?></div><!-- .dt-news-post-desc -->
                                         </div><!-- .dt-news-post-content -->
                                     </div><!-- .dt-news-post transition5 -->
                                     <?php } //end for?>
@@ -578,7 +619,6 @@
                             </div><!-- .dt-news-layout-wrap -->
 
                         </div>
-
 
 
                         <a href="#!" title="Sidebar Ads" rel="dofollow" target="_blank">
@@ -592,7 +632,7 @@
                                 for ($i=0; $i<10; $i++) {
                                 ?>
                                 <li>
-                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>"><?php echo $data_block[$i]->title; ?></a>
+                                    <a href="<?php echo detail_uri($data_block[$i]->slug); ?>" class="g-font-14px"><?php echo $data_block[$i]->title; ?></a>
                                 </li>
                                 <?php } //end for?>
                             </ul>

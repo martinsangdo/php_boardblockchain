@@ -67,6 +67,11 @@ p {font-size:14px;}
     width: 261px;
     height: 180px;
 }
+
+.cat-center-cropped {
+    width: 408px;
+    height: 272px;
+}
 .dt-news-post-meta span {font-size:12px;}
 .sidebar .social-widgets ul li a {text-align: left; padding-right:0;}
 .sidebar .social-widgets ul li a .screen-reader-text {margin-left:10px;}
@@ -90,3 +95,4 @@ p {font-size:14px;}
 .g-height-427 {height:427px;}
 .g-font-14px {font-size:14px;}
 .g-font-15px {font-size:15px;}
+.dt-pagination-nav li a {font-size:15px;}

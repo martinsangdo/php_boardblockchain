@@ -63,13 +63,14 @@
                 <div class="dt-main-menu">
                     <div class="menu-main-menu-container">
                         <ul id="primary-menu" class="menu">
-                            <li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="#!">Cryptocurrency</a></li>
-                            <li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="#!">Investment</a></li>
-                            <li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="#!">Business</a></li>
-                            <li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="#!">Research</a></li>
-                            <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="#!">Data</a></li>
-                            <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="#!">Download</a></li>
-                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="#!">Market</a></li>
+                            <li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="/category/search/cryptocurrency">Cryptocurrency</a></li>
+                            <li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="/category/search/investment">Investment</a></li>
+                            <li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="/category/search/business">Business</a></li>
+                            <li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8"><a href="/category/search/research">Research</a></li>
+                            <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="/category/search/data">Data</a></li>
+                            <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="/category/search/technology">Technology</a></li>
+                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/ico">ICO</a></li>
+                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/price">Price</a></li>
                             <li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-454"><a href="#!">Contact us</a></li>
                         </ul>
                     </div>

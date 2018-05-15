@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
@@ -156,14 +155,6 @@
         <input type="hidden" id="extra_ids" value="<?php echo $extra_ids; ?>"/>
     </div>
 </div><!-- .dt-body-wrap -->
-
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/themes/easymag/js/jquery.newsticker.min.js?ver=4.9.5'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/themes/easymag/js/custom.js?ver=4.9.5'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-includes/js/comment-reply.min.js?ver=4.9.5'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-includes/js/wp-embed.min.js?ver=4.9.5'></script>
-<script type='text/javascript' src='https://daisythemes.com/easymag/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4'></script>
 
 </body>
 </html>

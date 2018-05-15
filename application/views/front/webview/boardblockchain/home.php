@@ -547,7 +547,7 @@
                             <ul>
                                 <?php $data_block = $block_key_14; ?>
                                 <?php
-                                for ($i=0; $i<10; $i++) {
+                                for ($i=0; $i<5; $i++) {
                                 ?>
                                 <li>
                                     <a href="<?php echo detail_uri($data_block[$i]->slug); ?>" class="g-font-14px"><?php echo $data_block[$i]->title; ?></a>

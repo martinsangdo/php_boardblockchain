@@ -24,7 +24,7 @@
                 <div class="col-lg-9 col-md-9">
                     <main id="main" class="site-main" role="main">
 
-                        <article id="post-377" class="post-377 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-science">
+                        <article id="article_detail_container" class="post-377 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-science">
                             <header class="entry-header">
                                 <h1 class="entry-title"><?php echo $article_detail->title; ?></h1>
                                 <div class="entry-meta">
@@ -82,7 +82,7 @@
                                     <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
                                     <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
                                     <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
-                                    <p class="form-submit"><input name="button" type="button" id="button" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='377' id='comment_post_ID' />
+                                    <p class="form-submit"><input name="button" type="submit" id="button" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='377' id='comment_post_ID' />
                                         <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
                                     </p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6082a92171" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="46"/></p>			</form>
                             </div><!-- #respond -->
@@ -99,7 +99,7 @@
                         <div class="dt-news-list-4">
                             <div class="dt-news-layout-wrap dt-sidebar-news">
 
-                                <h2 class="widget-title">Popular</h2>
+                                <h2 class="widget-title">Recent</h2>
 
                                 <div class="dt-news-post hidden" id="post_tmpl">
                                     <figure class="dt-news-post-img">
@@ -113,10 +113,22 @@
                                 </div><!-- .dt-news-post -->
 
                                 <div class="dt-news-layout4" id="random_posts_container">
+                                    <?php
+                                    for ($i=0; $i<8; $i++) {
+                                    ?>
+                                    <div class="dt-news-post">
+                                        <figure class="dt-news-post-img">
+                                            <a href="">
+                                                <img src="<?php echo $random_posts[$i]->thumb_url;?>" class="attachment-dt-featured-post-small size-dt-featured-post-small wp-post-image" alt=""/></a>
+                                        </figure><!-- .dt-news-post-img -->
 
+                                        <div class="dt-news-post-content">
+                                            <h3><a href="<?php echo detail_uri($random_posts[$i]->slug); ?>"><?php echo $random_posts[$i]->title; ?></a></h3>
+                                        </div><!-- .dt-news-post-content -->
+                                    </div><!-- .dt-news-post -->
+                                    <?php } //end for?>
                                     <div class="clearfix"></div>
-                                </div><!-- .dt-news-layout4 -->
-
+                                </div>
 
                             </div><!-- .dt-news-layout-wrap .dt-sidebar-news -->
                         </div>

@@ -36,7 +36,7 @@ function get_extra_posts(){
     common.ajaxPost(API_URI.GET_EXTRA_POSTS, params, function(lists){
         // console.log(lists);
         show_extra_posts(lists['random_posts'], $('#random_posts_container'));
-        show_extra_posts(lists['recent_posts'], $('#recent_posts_container'));
+        // show_extra_posts(lists['recent_posts'], $('#recent_posts_container'));
     });
 }
 //show related posts
@@ -56,14 +56,14 @@ function show_extra_posts(list, $container){
         $container.append($item.removeClass('hidden').removeAttr('id'));
     }
     //detect error img
-    setTimeout(function(){
-        $('img', $container).each(function() {
-            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                // image was broken, replace with your new image
-                this.src = '/public/unity_assets/img/missing_img.png';
-            }
-        });
-    }, 2000);
+    // setTimeout(function(){
+    //     $('img', $container).each(function() {
+    //         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+    //             // image was broken, replace with your new image
+    //             this.src = '/public/unity_assets/img/missing_img.png';
+    //         }
+    //     });
+    // }, 2000);
 }
 //show message in form
 function show_mess(str){
@@ -160,17 +160,17 @@ function load_more_comment(){
 //
 function window_onload(){
     get_article_detail();
-    get_extra_posts();
-    load_more_comment();
+    // get_extra_posts();
+    // load_more_comment();
     //replace broken images
-    setTimeout(function() {
-        $('img').each(function () {
-            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                // image was broken, replace with your new image
-                this.src = '/public/unity_assets/img/missing_img.png';
-            }
-        });
-    }, 3000);
+    // setTimeout(function() {
+    //     $('img').each(function () {
+    //         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+    //             // image was broken, replace with your new image
+    //             this.src = '/public/unity_assets/img/missing_img.png';
+    //         }
+    //     });
+    // }, 3000);
 }
 
 window.onload = window_onload;

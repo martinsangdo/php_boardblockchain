@@ -35,6 +35,8 @@ Class News extends REST_Controller
         }
         $this->data['related_posts'] = $related_posts;
         $this->data['extra_ids'] = implode('-',$extra_ids);
+        //get more list
+        $this->data['random_posts'] = $this->get_random_posts($extra_ids, $article_detail->_id);
         //
         $this->load->view(VIEW_FOLDER.'/news', $this->data);
     }

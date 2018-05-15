@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="dt-search-wrap">
-                    <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="#!">
+                    <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/category/search/">
                             <label>
                                 <span class="screen-reader-text">Search for:</span>
                                 <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
@@ -38,7 +38,7 @@
             <div class="col-lg-4 col-md-4">
                 <div class="dt-logo">
 
-                    <h1><a href="<?php echo base_url(); ?>" rel="home">Blockchain news</a></h1>
+                    <h1><a href="<?php echo base_url(); ?>" rel="home">BLOCKCHAIN NEWS</a></h1>
 
                 </div><!-- .dt-logo -->
             </div><!-- .col-lg-4 .col-md-4 -->
@@ -70,8 +70,9 @@
                             <li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="/category/search/data">Data</a></li>
                             <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="/category/search/technology">Technology</a></li>
                             <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/ico">ICO</a></li>
-                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/price">Price</a></li>
-                            <li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-454"><a href="#!">Contact us</a></li>
+                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/price">Market Price</a></li>
+                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/startup">Startup</a></li>
+                            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/category/search/trading">Trading</a></li>
                         </ul>
                     </div>
                 </div><!-- .dt-main-menu -->
